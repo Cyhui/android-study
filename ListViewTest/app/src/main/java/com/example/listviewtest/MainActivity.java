@@ -1,5 +1,6 @@
 package com.example.listviewtest;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         */
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null){
+            actionBar.hide();
+        }
 
         initFruit(); //初始化水果数据
         //设置自定义适配器
