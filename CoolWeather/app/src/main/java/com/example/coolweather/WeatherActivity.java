@@ -69,7 +69,7 @@ public class WeatherActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= 21) {
             View decorView = getWindow().getDecorView();
             //活动的布局会显示在状态栏上
-            //需要设置android:fitsSystemWindows="true" 为系统状态栏流出空间
+            //需要设置android:fitsSystemWindows="true" 为系统状态栏留出空间
             decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                     | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
             //设置透明色
