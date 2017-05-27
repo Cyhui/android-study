@@ -88,14 +88,21 @@ public class Utility {
     }
 
     /**
-     * 将返回的JSON数据解析成Weather实体类
+     * 传入json数据,返回实例化后的Weather对象
+     *
+     * @param response 传入的json数据
+     * @return 实例化后的Weather对象
      */
     public static Weather handleWeatherResponse(String response) {
         try {
+            // 将整个json实例化保存在jsonObject中
             JSONObject jsonObject = new JSONObject(response);
+            // 从jsonObject中取出键为"HeWeather"的数据,并保存在数组中
             JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
+            // 取出数组中的第一项,并以字符串形式保存
             String weatherContent = jsonArray.getJSONObject(0).toString();
-            return new Gson().fromJson(weatherContent, Weather.class);//将JSON数据转化成Weather对象
+            // 返回通过Gson解析后的Weather对象
+            return new Gson().fromJson(weatherContent, Weather.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
